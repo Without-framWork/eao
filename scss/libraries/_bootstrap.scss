@@ -1,0 +1,48 @@
+.container {
+  max-width: 1230px !important;
+}
+//pagination-bootstrap
+.pagination {
+  justify-content: center;
+  margin-top: 20px;
+}
+.page-item {
+  width: 40px;
+  height: 40px;
+  margin-right: 40px;
+}
+
+.page-link {
+  border: 0;
+  border-radius: 50%;
+  color: $main-color;
+  font-size: 21px;
+  font-weight: 500;
+  text-align: center;
+  padding: 7px 0;
+  i {
+    font-size: 20px;
+    color: $main-color;
+  }
+  // &:focus {
+  //   background: $main-color;
+  //   color: $white-color;
+  // }
+
+  &:hover {
+    background: $main-color;
+    color: $white-color;
+  }
+}
+.page-item.active .page-link {
+  background-color: $main-color;
+  color: $white-color !important;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border-radius: 0 !important;
+  &:hover {
+    background-color: $white-color;
+  }
+}

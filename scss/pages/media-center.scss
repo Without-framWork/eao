@@ -1,0 +1,26 @@
+.media-page {
+  text-align: center;
+  .btn-main {
+    margin-top: 50px;
+  }
+}
+.gallery-section {
+  background-color: rgba($color: #bbd1e0, $alpha: 0.1);
+}
+video {
+  width: 390px;
+  height: 250px;
+}
+
+.news-details {
+  .body-content {
+    max-width: 810px;
+    margin: auto;
+  }
+  img {
+    margin-bottom: 50px;
+  }
+  li {
+    margin-bottom: 20px;
+  }
+}

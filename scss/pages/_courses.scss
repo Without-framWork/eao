@@ -1,0 +1,26 @@
+.summary-cart {
+  border-radius: 4px;
+  box-shadow: $main-shadow;
+  padding: 50px 40px;
+  text-align: right;
+  margin-top: 50px;
+  ul {
+    list-style: none;
+    margin-bottom: 30px;
+  }
+  li {
+    font-size: 16px;
+    line-height: 50px;
+    font-weight: 400;
+    border-bottom: 0.5px solid #b7b7b7;
+    span {
+      float: left;
+    }
+  }
+
+  h5 {
+    font-size: 21px;
+    font-weight: 500;
+    color: $primary-color;
+  }
+}

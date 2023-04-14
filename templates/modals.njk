@@ -1,0 +1,229 @@
+{% extends "templates/layouts/app.html" %} {% block content %} {% set page_title
+= "offers" %}
+<!-- Button-Modals -->
+<button
+  type="button"
+  class="btn-main"
+  data-toggle="modal"
+  data-target="#modal-1"
+>
+  moadal#1
+</button>
+<button
+  type="button"
+  class="btn-main"
+  data-toggle="modal"
+  data-target="#modal-2"
+>
+  moadal#2
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="modal-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <h5 class="modal-title">طلب خدمة تأمين المؤتمرات</h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true"
+          ><i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <form action="#">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="الاسم" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="رقم الهاتف"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="البريد الإلكتروني"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>الخدمة</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>نوع الخدمة</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-12">
+              <div class="form-group">
+                <textarea
+                  class="form-control form-textarea"
+                  placeholder="العنوان"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn-main">ارسال</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="modal fade"
+  id="modal-2"
+  tabindex="-1"
+  role="dialog"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <h5 class="modal-title">استمارة تسجيل متطوع</h5>
+      <button
+        type="button"
+        class="close"
+        data-dismiss="modal"
+        aria-label="Close"
+      >
+        <span aria-hidden="true"
+          ><i class="fa fa-times" aria-hidden="true"></i>
+        </span>
+      </button>
+
+      <div class="modal-body">
+        <form action="#">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <input class="form-control" type="text" placeholder="الاسم" />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="الرقم القومي"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="رقم الهاتف"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="email"
+                  placeholder="البريد الإلكتروني"
+                />
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-group">
+                <input
+                  class="form-control"
+                  type="number"
+                  placeholder="تاريخ الميلاد"
+                />
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>النوع</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>المدينة</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>مجال التخصص</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>مجال العمل التطوعي</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <select class="form-control">
+                  <option selected>الوظيفة</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="submit" class="btn-main">ارسال</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,89 @@
+{% extends "templates/layouts/app.html" %} {% block content %} {% set page_title
+= "offers" %} {% include "templates/partials/header.njk" %}
+
+  <div class="page-head">
+    <img src="assets/images/page-head.png" alt="#" />
+    <h2>الخدمات</h2>
+  </div>
+  <div class="breadcrumb">
+    <ul>
+      <li><a href="services.html"> الخدمات </a></li>
+      <li><a href="#"> طلب إسعاف بحضانة لنقل الأطفال حديثي الولادة</a></li>
+    </ul>
+  </div>
+
+  <div class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-4">
+          <ul class="nav-sidebar">
+            <li>
+              <a href="#"> طلب إسعاف لخدمة غير طارئة </a>
+            </li>
+            <li>
+              <a href="#"> طلب مطابقة فنية لترخيص سيارة الإسعاف </a>
+            </li>
+
+            <li>
+              <a href="#"> طلب خدمات الإسعاف النهري </a>
+            </li>
+
+            <li>
+              <a href="#"> طلب خدمات الإسعاف الجوي</a>
+            </li>
+            <li>
+              <a href="#"> طلب إسعاف بحضانة لنقل الأطفال حديثي الولادة </a>
+            </li>
+            <li>
+              <a href="#"> تأمين المؤتمرات </a>
+            </li>
+          </ul>
+        </div>
+        <div class=" col-lg-9 col-md-8">
+          <div class="body-content">
+           
+            <div class="body-text">
+               <h3>تعريف بالخدمة</h3>
+            <p>
+              يتم نقل الأطفال أقل من عمر 29 يوم من وإلي أي حضانة عن طريق سيارات
+              الإسعاف المجهزة بحضانة متنقلة
+            </p>
+            </div>
+
+            <div class="body-text">
+              <h3>عدد سيارات الإسعاف المجهزة بحضانة علي مستوي الجمهورية</h3>
+              <p class="mb-0">
+                يوجد 95 سيارة إسعاف مجهزة بحضانة متنقلة وجهاز تنفس صناعي
+              </p>
+              <p>يوجد أيضا نقل جوي عن طريق الطيران المدني</p>
+            </div>
+
+            <div class="body-text">
+              <h3>كيفية طلب خدمة سيارة إسعاف مجهزة بحضانة متنقلة</h3>
+              <span>
+                آلية استخدام تلك الخدمة تعتمد على الاتصال برقم الإسعاف ١٢٣ ،
+                ويحدد الأتي
+              </span>
+              <ul>
+                <li>المكان المحول منه</li>
+                <li>المكان المحول إليه</li>
+                <li>الطبيب المرافق للحالة ورقم هاتفه</li>
+                <li>الطبيب المستقبل ورقم هاتفه</li>
+                <li>تشخيص مبدئي</li>
+                <li>علي جهاز تنفس صناعي أو أكسجين فقط</li>
+              </ul>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/images/services-1.png" alt="#" />
+                </div>
+                <div class="col-md-6">
+                  <img src="assets/images/services-5.png" alt="#" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% include "templates/partials/footer.njk" %} {% endblock %}

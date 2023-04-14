@@ -1,0 +1,47 @@
+@import "utilities/__utilities.scss";
+@import "base/_base.scss";
+@import "components/__components.scss";
+@import "layout/__layout.scss";
+@import "pages/__pages.scss";
+@import "libraries/__libraries.scss";
+@import "plugins/__plugins.scss";
+@import "layout/_responsive.scss";
+
+//page-head
+.page-head {
+  position: relative;
+  h2 {
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    color: $white-color;
+    width: 100%;
+  }
+}
+.section-title {
+  width: 210px;
+  font-size: 32px;
+  color: $primary-color;
+  font-weight: bold;
+  text-align: center;
+  border-bottom: 2px solid $primary-color;
+  line-height: 60px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+%font-style {
+  font-size: 16px;
+  font-weight: 400;
+}
+.border-line {
+  border-bottom: 0.5px solid #b7b7b7;
+  margin: 10px 0;
+}
+.content-section ,.medical-services-section,.news-section {
+  .item-box {
+    margin-bottom: 30px;
+  }
+}

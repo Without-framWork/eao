@@ -1,0 +1,48 @@
+{% extends "templates/layouts/app.html" %} {% block content %} {% set page_title
+= "offers" %} {% include "templates/partials/header.njk" %}
+  <div class="page-head">
+    <img src="assets/images/page-head.png" alt="#" />
+    <h2>المركز الإعلامي</h2>
+  </div>
+  <div class="breadcrumb">
+    <ul>
+      <li><a href="media-center.html"> المركز الإعلامي </a></li>
+      <li><a href="#"> معرض الصور</a></li>
+    </ul>
+  </div>
+  <div class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="item-box">
+            <img src="assets/images/instructions-image.png" alt="news-image" />
+            <div class="item-text">
+              <p>إرشادات ونصائح</p>
+              <a  class="hvr-icon-back" href="save-person.html">عرض الألبوم <i class="fa fa-long-arrow-left hvr-icon"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item-box">
+            <img src="assets/images/instructions-image.png" alt="news-image" />
+            <div class="item-text">
+              <p>إرشادات ونصائح</p>
+              <a  class="hvr-icon-back" href="save-person.html">عرض الألبوم <i class="fa fa-long-arrow-left hvr-icon"></i> </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="item-box">
+            <img src="assets/images/save-image-1.png" alt="#" />
+            <div class="item-text">
+              <p>بإيدك تنقذ إنسان</p>
+              <a  class="hvr-icon-back" href="save-person.html">عرض الألبوم <i class="fa fa-long-arrow-left hvr-icon"></i> </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% include "templates/partials/footer.njk" %} {% endblock %}

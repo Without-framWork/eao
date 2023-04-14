@@ -1,0 +1,80 @@
+{% extends "templates/layouts/app.html" %} {% block content %} {% set page_title
+= "offers" %} {% include "templates/partials/header.njk" %}
+
+  <div class="page-head">
+    <img src="assets/images/page-head.png" alt="#" />
+    <h2>الخدمات</h2>
+  </div>
+  <div class="breadcrumb">
+    <ul>
+      <li><a href="services.html"> الخدمات </a></li>
+      <li><a href="#"> تأمين المؤتمرات</a></li>
+    </ul>
+  </div>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="nav-sidebar">
+            <li>
+              <a href="#"> طلب إسعاف لخدمة غير طارئة </a>
+            </li>
+            <li>
+              <a href="#"> طلب مطابقة فنية لترخيص سيارة الإسعاف </a>
+            </li>
+
+            <li>
+              <a href="#"> طلب خدمات الإسعاف النهري </a>
+            </li>
+
+            <li>
+              <a href="#"> طلب خدمات الإسعاف الجوي</a>
+            </li>
+            <li>
+              <a href="#"> طلب إسعاف بحضانة لنقل الأطفال حديثي الولادة </a>
+            </li>
+            <li>
+              <a href="#"> تأمين المؤتمرات </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="body-content">
+            <div class="body-text">
+              <h3>طلب تأمين مؤتمرات أو احتفالات جماعية أو أحداث رياضية</h3>
+              <p>
+                يتم التنسيق مسبقاً مع الهيئة بإرسال البيانات اللازمة لإدارة
+                الخدمات الإسعافية الغير طارئة لتوفير سيارات الإسعاف اللازمة و
+                الأطباء المتخصصون بمجال الطوارئ
+              </p>
+            </div>
+
+            <div class="body-text">
+              <h3>كيفية طلب خدمة تأمين المؤتمرات</h3>
+              <span> البيانات الواجب توافرها </span>
+              <ul>
+                <li>موعد ومكان انعقاد المؤتمر او الاحتفال</li>
+                <li>عدد الحاضرين المتوقع</li>
+                <li>
+                  مدي الاحتياج الي عيادة متخصصة بمكان انعقاد المؤتمر او الاحتفال
+                </li>
+                <li>عدد سيارات الإسعاف المطلوبة لتأمين الحدث</li>
+                <li>الشخصيات الهامة الموجودة بالمؤتمر</li>
+              </ul>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/images/services-1.png" alt="#" />
+                </div>
+                <div class="col-md-6">
+                  <img src="assets/images/services-5.png" alt="#" />
+                </div>
+              </div>
+              <button type="submit" class="btn-main" >طلب الخدمة</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% include "templates/partials/footer.njk" %} {% endblock %}

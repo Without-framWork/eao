@@ -1,0 +1,84 @@
+{% extends "templates/layouts/app.html" %} {% block content %} {% set page_title
+= "offers" %} {% include "templates/partials/header.njk" %}
+
+  <div class="page-head">
+    <img src="assets/images/page-head.png" alt="#" />
+    <h2>معلومات تهمك</h2>
+  </div>
+  <div class="breadcrumb">
+    <ul>
+      <li><a href="#"> معلومات تهمك </a></li>
+      <li><a href="#"> حقوق وخصوصيات </a></li>
+      <li><a href="#"> سيارة الإسعاف</a></li>
+    </ul>
+  </div>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <ul class="nav-sidebar">
+            <li>
+                <a href="#" class="dropmenu">  حقوق وخصوصيات </a>
+                <ul>
+                  <li><a class="active" href="#">سيارة الإسعاف</a></li>
+                 
+                </ul>
+              </li>
+            <li>
+              <a href="#"> طاقم الخدمة الإسعافية   </a>
+            </li>
+
+            <li>
+              <a href="#"> المواطن    </a>
+            </li>
+
+            <li>
+              <a href="#"> كيف تتعامل مع سيارة الإسعاف</a>
+            </li>
+            
+           
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <div class="body-content">
+            <div class="body-text">
+              <h3>دور سيارة الإسعاف</h3>
+              <ul>
+                <li>
+                  تقديم الإسعافات الأولية والعلاج للمريض قبيل دخوله للمستشفى
+                </li>
+                <li>
+                  تقديم العلاج للمصابين أو المر​ضي في الحالات الطارئة وأيضا
+                  لنقلهم إلى مراكز الرعاية الصحية من مستشفيات ومستوصفات طبية
+                </li>
+                <li>
+                  يجب أن تحمل سيارة الإسعاف تجهيزات ومواد تمكن من القيام
+                  بالعناية المستعجلة في مكان الحادث وخلال النقل وبحماية العاملين
+                  والمرضى في ظروف محفوفة بالمخاطر وفي إنجاز عمليات إنقاذ عادية
+                </li>
+                <li>
+                  ويجب أن تكون مزودة بجهاز لاسلكي للإرسال والاستقبال كما يجب أن
+                  تكون مصممة ومصنوعة بحيث تؤمن أقصى حد ممكن من الحماية والراحة
+                  وتجنب تدهور وضع المريض أو تعريضه لفقدان حياته
+                </li>
+                <li>
+                  ومن الطبيعي ان تكون جميع الأجهزة معقمة ونظيفة وكذلك السيارة
+                  نفسها ان تكن نظيفة في كل مرة تستقبل فيها المرضي أو المصابين
+                </li>
+              </ul>
+              <div class="row">
+                <div class="col-md-6">
+                  <img src="assets/images/services-1.png" alt="#" />
+                </div>
+                <div class="col-md-6">
+                  <img src="assets/images/services-5.png" alt="#" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% include "templates/partials/footer.njk" %} {% endblock %}

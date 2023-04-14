@@ -1,0 +1,142 @@
+{% extends "templates/layouts/app.html" %} {% block content %} {% set page_title
+= "offers" %} {% include "templates/partials/header.njk" %}
+<div class="page-head">
+  <img src="assets/images/contact-image.png" alt="#" />
+  <h2>اتصل بنا</h2>
+</div>
+<div class="content-section">
+  <div class="container">
+    <div class="contact-page">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="contact-infor">
+            <h4>معلومات التواصل</h4>
+            <ul>
+              <li>
+                <span> <i class="fa fa-map-marker"></i></span>
+
+                <p>قسم أول 6 أكتوبر، الجيزة</p>
+              </li>
+              <li>
+                <span><i class="fa fa-envelope-o"></i></span>
+                <p>eao.media@eao.gov.eg</p>
+              </li>
+              <li>
+                <span> <i class="fa fa-phone"></i></span>
+                <p>0237766393 - 0237766392</p>
+              </li>
+
+              <li>
+                <span> <i class="fa fa-fax"></i></span>
+
+                <p>0237766390</p>
+              </li>
+            </ul>
+            <h4>التواصل الإجتماعي</h4>
+
+             <ul class="social-links">
+              <li>
+                <a class="youtube hvr-icon-sink" href="#">
+                  <i class="fa fa-youtube-play hvr-icon"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  class="facebook hvr-icon-sink"
+                  href="https://www.facebook.com/EAO.Ambulance.Organization"
+                  target="_balnk"
+                  ><i class="fa fa-facebook hvr-icon"></i>
+                </a>
+              </li>
+              <li>
+                <a class="twitter hvr-icon-sink" href="#"><i class="fa fa-twitter hvr-icon"></i> </a>
+              </li>
+
+              <li>
+                <a
+                  class="instagram  hvr-icon-sink"
+                  href="https://www.instagram.com/eao.ambulance.organization/"
+                  target="_balnk"
+                >
+                  <i class="fa fa-instagram  hvr-icon"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <form action="#" class="contact-form">
+            <h5>اتصل بنا</h5>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="user-name"> الاسم</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="user-name"
+                    id="user-name"
+                    placeholder="الاسم"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="phone-number"> رقم الهاتف</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="phone-number"
+                    id="phone-number"
+                    placeholder="رقم الهاتف"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label for="email">البريد الإلكتروني </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="email"
+                    id="email"
+                    placeholder="البريد الإلكتروني"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="services">نوع التواصل </label>
+
+                  <select class="form-control" id="services">
+                    <option selected>نوع الخدمة</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label for="massage"> الرسالة</label>
+
+                  <textarea
+                    class="form-control form-textarea"
+                    name="massage"
+                    id="massage"
+                    placeholder="الرسالة"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn-main">ارسال</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="map ">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d2965.0824050173574!2d-93.63905729999999!3d41.998507000000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sWebFilings%2C+University+Boulevard%2C+Ames%2C+IA!5e0!3m2!1sen!2sus!4v1390839289319"
+       
+      ></iframe>
+    </div>
+  </div>
+</div>
+
+{% include "templates/partials/footer.njk" %} {% endblock %}

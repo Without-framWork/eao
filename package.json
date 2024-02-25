@@ -3,9 +3,11 @@
   "version": "0.0.1",
   "description": "simple webpack scaffolding with nunjucks",
   "scripts": {
-    "webpack" : "webpack", // invoke this command from npm run dev & npm run build
-    "dev": "npm run webpack -- --mode development --watch",
-    "build": "npm run webpack -- --mode production"
+   "dev": "webpack --watch",
+    "build": "webpack",
+    "build:prod": "webpack --env.production",
+    "watch": "webpack --watch",
+    "watch:prod": "webpack --watch --env.production"
   
   },
   "author": "Andrea Briganti <kbytesys@gmail.com>",

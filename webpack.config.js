@@ -1,154 +1,115 @@
 /* eslint-disable */
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const NunjucksWebpackPlugin = require('nunjucks-webpack-plugin');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const path = require('path');
 const nunjuckspages = require('./nunjuckspages');
 
-module.exports = env => {
-  const devMode = !env || !env.production;
+module.exports = (env, argv) => {
+   // Webpack 5 reads mode from argv.mode
+   const isProduction = argv.mode === 'production';
 
-  return {
-    mode: devMode ? 'development' : 'production',
-    entry: {
-      main: './src/index.js',
-      typescript_demo: './src/ts/typescript_demo.ts',
-      vendor: './src/vendor.js'
-    },
-    output: {
-      path: path.join(__dirname, 'dist'),
-      filename: 'assets/js/[name].js',
-      library: '[name]Module'
-    },
-    module: {
-      rules: [
-        {
-          test: /\.(sa|sc|c)ss$/,
-          use: [
-            MiniCssExtractPlugin.loader,
-            { loader: 'css-loader', options: { sourceMap: true } },
-            { loader: 'postcss-loader', options: { sourceMap: true } },
-            { loader: 'sass-loader', options: { sourceMap: true } },
-          ]
-        },
-        {
-          test: /\.ts(x?)$/,
-          enforce: 'pre',
-          exclude: /node_modules/,
-          use: [
+   return {
+      mode: isProduction ? 'production' : 'development',
+      entry: {
+         main: './src/index.js',
+         typescript_demo: './src/ts/typescript_demo.ts',
+         vendor: './src/vendor.js',
+      },
+      output: {
+         path: path.join(__dirname, 'dist'),
+         filename: 'assets/js/[name].js',
+         library: '[name]Module',
+         clean: true, // Replaces CleanWebpackPlugin natively
+      },
+      // Webpack 5 replacement for BrowserSync live reloading & file watching
+      devServer: {
+         static: {
+            directory: path.join(__dirname, 'dist'),
+         },
+         compress: true,
+         port: 3000,
+         hot: true,
+         watchFiles: ['src/**/*', 'templates/**/*'], // Replaces ExtraWatchWebpackPlugin
+      },
+      module: {
+         rules: [
             {
-              loader: 'eslint-loader',
-              options: {
-                options: {
-                  eslintPath: path.join(__dirname, 'src/ts/'),
-                }
-              }
-            }
-          ]
-        },
-        {
-          test: /\.ts(x?)$/,
-          exclude: /node_modules/,
-          use: [
-            {
-              loader: 'babel-loader',
-              query: {
-                presets: [
-                  '@babel/preset-env'
-                ]
-              }
+               test: /\.(sa|sc|c)ss$/,
+               use: [
+                  MiniCssExtractPlugin.loader,
+                  { loader: 'css-loader', options: { sourceMap: true } },
+                  { loader: 'postcss-loader', options: { sourceMap: true } },
+                  {
+                     loader: 'sass-loader',
+                     options: {
+                        sourceMap: true,
+                        sassOptions: {
+                           silenceDeprecations: ['legacy-js-api', 'import', 'global-builtin'],
+                        },
+                     },
+                  },
+               ],
             },
             {
-              loader: 'ts-loader'
-            }
-          ]
-        },
-        {
-          enforce: 'pre',
-          test: /\.js$/,
-          exclude: /node_modules/,
-          loader: 'eslint-loader'
-        },
-        {
-          test: /\.js$/,
-          loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env'
-            ]
-          }
-        },
-        {
-          test: /\.(png|jpg|gif)$/i,
-          use: [
+               test: /\.ts(x?)$/,
+               exclude: /node_modules/,
+               use: [
+                  {
+                     loader: 'babel-loader',
+                     options: {
+                        presets: ['@babel/preset-env'],
+                     },
+                  },
+                  {
+                     loader: 'ts-loader',
+                  },
+               ],
+            },
             {
-              loader: 'url-loader',
-              options: {
-                limit: 8192
-              }
-            }
-          ]
-        },
-        {
-          test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-          use: [{
-            loader: 'url-loader',
-            options: {
-              name: '[name].[ext]',
-              // outputPath: 'fonts/'
-            }
-          }]
-        },
-        
-      ]
-    },
-    stats: {
-      colors: true
-    },
-    devtool: 'source-map',
-    plugins: [
-      new NunjucksWebpackPlugin({
-        templates: nunjuckspages
-      }),
-      new MiniCssExtractPlugin({
-        filename: 'assets/css/[name].css'
-      }),
-      new StyleLintPlugin(),
-      new BrowserSyncPlugin({
-        host: 'localhost',
-        port: 3000,
-        server: { baseDir: ['dist'] }
-      }),
-      new ExtraWatchWebpackPlugin({
-        dirs: ['templates']
-      }),
-      new CopyWebpackPlugin({
-        patterns: [
-          { from: 'assets/**/*', to: '.', noErrorOnMissing: true}
-        ]
-      })
-    ],
-    optimization: {
-      minimize: !devMode,
-      minimizer: [
-        new TerserPlugin({
-          sourceMap: true,
-          parallel: true
-        }),
-        new OptimizeCSSAssetsPlugin({
-          cssProcessorOptions: {
-            map: {
-              inline: false
-            }
-          }
-        })
-      ]
-    }
-  };
+               test: /\.js$/,
+               exclude: /node_modules/,
+               use: {
+                  loader: 'babel-loader',
+                  options: {
+                     presets: ['@babel/preset-env'],
+                  },
+               },
+            },
+            {
+               test: /\.(png|jpg|gif|woff|woff2|ttf|eot|svg)$/i,
+               type: 'asset/resource', // Replaces url-loader/file-loader in Webpack 5
+               generator: {
+                  filename: 'assets/media/[name][ext]',
+               },
+            },
+         ],
+      },
+      stats: {
+         colors: true,
+      },
+      devtool: isProduction ? 'source-map' : 'eval-source-map',
+      plugins: [
+         new NunjucksWebpackPlugin({
+            templates: nunjuckspages,
+         }),
+         new MiniCssExtractPlugin({
+            filename: 'assets/css/[name].css',
+         }),
+         new CopyWebpackPlugin({
+            patterns: [{ from: 'assets/**/*', to: '.', noErrorOnMissing: true }],
+         }),
+      ],
+      optimization: {
+         minimize: isProduction,
+         minimizer: [
+            new TerserPlugin({
+               parallel: true,
+            }),
+            // Old CSS minimizer dropped. Webpack 5 optimizes production CSS natively out of the box.
+         ],
+      },
+   };
 };

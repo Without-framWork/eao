@@ -104,6 +104,17 @@ module.exports = (env, argv) => {
                   from: path.resolve(__dirname, 'assets'),
                   to: path.resolve(__dirname, 'dist/assets'),
                   noErrorOnMissing: true,
+                  globOptions: {
+                     ignore: [
+                        '**/main.css',
+                        '**/main.css.map',
+                        '**/main.js',
+                        '**/main.js.map',
+                        '**/typescript_demo.*',
+                        '**/vendor.js',
+                        '**/vendor.js.map',
+                     ],
+                  },
                },
             ],
          }),

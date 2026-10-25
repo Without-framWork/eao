@@ -99,7 +99,13 @@ module.exports = (env, argv) => {
             filename: 'assets/css/[name].css',
          }),
          new CopyWebpackPlugin({
-            patterns: [{ from: 'assets/**/*', to: '.', noErrorOnMissing: true }],
+            patterns: [
+               {
+                  from: path.resolve(__dirname, 'assets'),
+                  to: path.resolve(__dirname, 'dist/assets'),
+                  noErrorOnMissing: true,
+               },
+            ],
          }),
       ],
       optimization: {
